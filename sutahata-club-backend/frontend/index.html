@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUTAHATA YOUNGSTAR SOCIAL ORGANIZATION</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+   <h1 class="abc">Welcome to Our Club</h1>
+  <header>
+    <nav>
+       <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Gallery</a>
+      <a href="/login">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <h2>Welcome To Sutahata Youngstar Social Organization</h2>
+    </section>
+
+  <section class="slider">
+  <div class="slides">
+    <img src="img1.jpg" alt="Photo 1">
+    <img src="img2.jpg" alt="Photo 2">
+    <img src="img3.jpg" alt="Photo 3">
+  </div>
+</section>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slides img');
+
+  function showSlide(index) {
+    slides.forEach((img, i) => {
+      img.style.opacity = i === index ? '1' : '0';
+    });
+  }
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 3000);
+
+  // Show the first slide initially
+  showSlide(currentSlide);
+</script>
+
+ <p>Sutahata Young Star Club is a cultural and voluntary organization located in Sutahata, Haldia, Purba Medinipur, West Bengal – 721636. The club plays an active role in promoting community spirit by organizing Durga Puja every year with great devotion and participation. It also regularly conducts tree plantation programs to raise environmental awareness. Additionally, the club premises host an ICDS school, contributing to early childhood education and care for the local children.</p><br>
+
+    <section id="notices">
+      <h2>Public Notices</h2>
+      <ul id="publicNotices"></ul>
+
+      <div id="privateSection" style="display:none;">
+        <h2>Member Notices</h2>
+        <ul id="memberNotices"></ul>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Sutahata Young Star. All rights reserved.</p>
+  </footer>
+</body>
+</html>
