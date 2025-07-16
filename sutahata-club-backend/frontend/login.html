@@ -19,11 +19,12 @@
       <button type="submit" class="btn-primary">Login</button>
     </form>
   </div>
+  
   <script>
   const form = document.getElementById("loginForm");
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // prevent default form submission
+    e.preventDefault();
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -39,15 +40,13 @@
     .then(data => {
       if (data.success) {
         alert("Login successful!");
-        // You can store a token or redirect to a member-only page
-        // localStorage.setItem("token", data.token);
-        window.location.href = "/";
+        window.location.href = "/"; // Redirect to home
       } else {
         alert("Login failed: " + data.message);
       }
     })
-    .catch(error => {
-      console.error("Error logging in:", error);
+    .catch(err => {
+      console.error("Login error:", err);
     });
   });
 </script>
