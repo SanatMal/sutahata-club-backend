@@ -64,7 +64,9 @@
   <footer>
     <p>&copy; 2025 Sutahata Young Star. All rights reserved.</p>
   </footer>
-  <script>
+  
+ <script>
+  // Auto image slider
   let currentSlide = 0;
   const slides = document.querySelectorAll('.slides img');
 
@@ -79,20 +81,20 @@
     showSlide(currentSlide);
   }, 3000);
 
-  // Show the first slide initially
-  showSlide(currentSlide);
+  showSlide(currentSlide); // First slide
 
-  // ✅ FETCH PUBLIC NOTICES from backend (Render)
+  // ✅ Fetch public notices from backend
   fetch("https://sutahata-club-backend.onrender.com/api/notices/public")
     .then(res => res.json())
     .then(data => {
       const list = document.getElementById("publicNotices");
-      list.innerHTML = data.map(notice => `<li>${notice}</li>`).join("");
+      list.innerHTML = data.map(n => `<li>${n}</li>`).join("");
     })
     .catch(err => {
-      console.error("Error loading notices:", err);
+      console.error("Failed to load notices:", err);
     });
 </script>
+
 
 </body>
 </html>
